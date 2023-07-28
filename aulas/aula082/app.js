@@ -1,28 +1,17 @@
-// const nomes = ['Maria', 'João', 'Eduardo', 'Gabriel', 'Júlia'];
+const nomes = ['Maria', 'João', 'Eduardo', 'Gabriel', 'Júlia'];
 
-// Remove o último nome
-// nomes.pop();
+// nomes.splice(índice, quantidade de elem para apagar, elem1, elem2, elem3);
+// pop
+// nomes.splice(3, 1);
 
-// Remove o primeiro nome
-// nomes.shift();
+//shift
+// nomes.splice(0, 1);
 
-// Desloca todos os valores e adiciona ao primeiro lugar do array
-// nomes.unshift("Lucas");
+// push
+// nomes.splice(nomes.length, 0, 'Tomás');
 
-// Adiciona um valor ao último lugar do array
-// nomes.push("Tomás");
+// unshift
+nomes.splice(0, 0, 'Tomás');
 
-// Corta um array conforme os parâmetros
-// const novosNomes = nomes.slice(0, -1);
-
-
-// const nome = "Luiz Otávio Miranda";
-//Divide uma string e transforma em um array;
-// const nomes = nome.split(" ");
-
-const nomes = ["Luiz", "Otávio", "Miranda"];
-//Junta os arrays;
-const nome = nomes.join(" ")
-
-console.log(nome);
-// console.log(novosNomes);
+console.log(nomes);
+//Retorno: [ 'Tomás', 'Maria', 'João', 'Eduardo', 'Gabriel', 'Júlia' ]

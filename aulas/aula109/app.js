@@ -1,3 +1,44 @@
+// Promise.all Promise.race Promise.resolve Promise.reject
+/*
+const promises = [
+    //'Primeiro valor',
+    espera('Promise 1', 3000),
+    espera('Promise 2', 500),
+    espera('Promise 3', 1000),
+    //'Outro valor'
+];
+*/
+
+
+/*
+Promise.all(promises).then((valor) => {
+    console.log(valor);
+}).catch((e) => {
+    console.log(e);
+});
+*/
+
+/*
+Promise.race(promises).then((valor) => {
+    console.log(valor);
+}).catch((e) => {
+    console.log(e);
+});
+*/
+
+function baixarSite() {
+    // Imagine que estamos recebendo o dado se está em cache ou não
+    const emCache = true;
+
+    if(emCache) {
+        return Promise.resolve('Site em cache!');
+    } else {
+        return espera('Site baixado!', 3000);
+    }
+}
+
+baixarSite().then(valor => console.log(valor)).catch(e => console.log(e));
+
 const rand = (minimo, maximo) => {
     minimo *= 1000;
     maximo *= 1000;
@@ -14,16 +55,6 @@ const espera = (mensagem, tempo) => {
     }); 
 }
 
-// espera("Frase 1", rand(1, 3)).then(resposta => {
-//     console.log(resposta);
-//     return espera("Frase 2", rand(1, 3));
-// }).then(resposta => {
-//     console.log(resposta);
-//     return espera("Frase 3", rand(1, 3));
-// }).then(resposta => {
-//     console.log(resposta);
-// });
-
 async function run() {
     const fase1 = await espera('Fase 1', rand(1, 3));
     console.log(fase1);
@@ -36,3 +67,8 @@ async function run() {
 }
 
 run();
+/* Retorno: 
+	Fase 1
+	Fase 2
+	Fase 3
+*/

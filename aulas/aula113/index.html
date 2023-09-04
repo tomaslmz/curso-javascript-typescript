@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(117, 117, 231);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        background-color: white;
+        border-radius: 20px;
+        max-width: 500px;
+        width: 100vw;
+        padding: 20px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Olá, mundo!</h1>
+        <div class="resultado"></div>
+    </div>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,8 +1,13 @@
+import Student from '../models/Students';
+
 class Home {
-  index(req, res) {
-    res.json({
-      isOkay: true,
+  async index(req, res) {
+    const newStudent = await Student.create({
+      name: 'Tomás',
+      email: 'tomas@gmail.com',
+      birth_date: '2005/05/24',
     });
+    res.json(newStudent);
   }
 }
 

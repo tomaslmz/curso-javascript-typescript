@@ -25,5 +25,7 @@ module.exports = {
     'no-console': 'off',
     'class-methods-use-this': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'keyword-spacing': 'off',
+    quotes: 'off',
   },
 };

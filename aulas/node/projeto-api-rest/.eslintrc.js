@@ -28,5 +28,6 @@ module.exports = {
     'keyword-spacing': 'off',
     quotes: 'off',
     "no-param-reassign": "off",
+    camelcase: "off",
   },
 };

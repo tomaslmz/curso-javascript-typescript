@@ -7,8 +7,8 @@ router.post('/create', controller.create);
 
 router.get('/list', controller.read);
 
-router.delete('/delete', controller.delete);
+router.delete('/delete/:id', controller.delete);
 
-router.patch('/update', controller.update);
+router.patch('/update/:id', controller.update);
 
 export default router;

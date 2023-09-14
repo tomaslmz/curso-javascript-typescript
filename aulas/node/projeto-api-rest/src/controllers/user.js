@@ -18,7 +18,6 @@ class User {
       const users = await Users.findAll({
         attributes: ['id', 'name', 'email', 'created_at', 'updated_at'],
       });
-      console.log(users);
       return res.json(users);
     } catch (e) {
       return res.status(400).json({
@@ -29,17 +28,27 @@ class User {
 
   async delete(req, res) {
     try {
-      if(!req.body.id) {
-        throw new Error('Id is required!');
+      if(!req.params.id) {
+        return res.status(400).json({
+          errors: ['The id is needed to update the user!'],
+        });
+      }
+
+      const users = await Users.findByPk(req.params.id);
+
+      if(!users) {
+        return res.status(400).json({
+          errors: ["The user doesn't exist"],
+        });
       }
 
       await Users.destroy({
         where: {
-          id: req.body.id,
+          id: req.params.id,
         },
       });
 
-      return res.json(`The user with ID ${req.body.id} was deleted!`);
+      return res.json(`The user with ID ${req.params.id} was deleted!`);
     } catch(e) {
       return res.json(e);
     }
@@ -47,13 +56,13 @@ class User {
 
   async update(req, res) {
     try {
-      if(!req.query.id) {
+      if(!req.params.id) {
         return res.status(400).json({
           errors: ['The id is needed to update the user!'],
         });
       }
 
-      const users = await Users.findByPk(req.query.id);
+      const users = await Users.findByPk(req.params.id);
 
       if(!users) {
         return res.status(400).json({
@@ -63,7 +72,7 @@ class User {
 
       await Users.update({ name: req.body.name, email: req.body.email }, {
         where: {
-          id: req.query.id,
+          id: req.params.id,
         },
       });
       return res.json('The user is updated!');

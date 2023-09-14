@@ -27,5 +27,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'keyword-spacing': 'off',
     quotes: 'off',
+    "no-param-reassign": "off",
   },
 };

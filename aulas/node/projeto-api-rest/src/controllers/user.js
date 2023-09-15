@@ -50,7 +50,9 @@ class User {
 
       return res.json(`The user with ID ${req.params.id} was deleted!`);
     } catch(e) {
-      return res.json(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -70,7 +72,11 @@ class User {
         });
       }
 
-      await Users.update({ name: req.body.name, email: req.body.email }, {
+      await Users.update({
+        name: req.body.name
+        || users.name,
+        email: req.body.email || users.email,
+      }, {
         where: {
           id: req.params.id,
         },

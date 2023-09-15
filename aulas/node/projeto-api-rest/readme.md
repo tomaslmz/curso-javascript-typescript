@@ -1,0 +1,9 @@
+## Important ENVs
+
+- PORT
+- HOST
+- USER
+- PASSWORD
+- DATABASE
+- TOKEN
+- TOKEN_EXPIRATION

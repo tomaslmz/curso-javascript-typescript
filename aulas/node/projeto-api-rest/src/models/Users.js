@@ -24,9 +24,6 @@ export default class Users extends Model {
           isEmail: {
             msg: "Invalid email",
           },
-          unique: {
-            msg: 'The email must be unique',
-          },
         },
       },
       password_hash: Sequelize.STRING,

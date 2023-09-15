@@ -1,4 +1,5 @@
 import Sequelize, { Model } from 'sequelize';
+import Photos from './Photos';
 
 export default class Students extends Model {
   static init(sequelize) {
@@ -35,5 +36,9 @@ export default class Students extends Model {
     });
 
     return this;
+  }
+
+  static associate() {
+    this.hasMany(Photos, { foreignKey: 'student_id' });
   }
 }

@@ -1,3 +1,4 @@
+import Photos from '../models/Photos';
 import Students from '../models/Students';
 
 class Student {
@@ -24,7 +25,13 @@ class Student {
 
   async read(req, res) {
     try {
-      const students = await Students.findAll();
+      const students = await Students.findAll({
+        order: [['id', 'DESC'], [Photos, 'id', 'ASC']],
+        include: {
+          model: Photos,
+          attributes: ['url', 'filename'],
+        },
+      });
       return res.json(students);
     } catch(e) {
       return res.status(400).json({

@@ -29,5 +29,6 @@ module.exports = {
     quotes: 'off',
     "no-param-reassign": "off",
     camelcase: "off",
+    "import/no-cycle": "off",
   },
 };

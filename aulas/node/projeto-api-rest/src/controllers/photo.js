@@ -20,7 +20,9 @@ class Photo {
 
         return res.json(photo);
       } catch(erro) {
-        return res.json(erro);
+        return res.status(400).json({
+          errors: ["The student doesn't exists!"],
+        });
       }
     });
   }

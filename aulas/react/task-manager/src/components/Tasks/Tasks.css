@@ -1,0 +1,45 @@
+.tasks {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.task {
+  display: flex;
+  margin: auto;
+  align-self: center;
+  width: 80%;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 10px;
+
+  transition: background-color 100ms linear;
+}
+
+.task:hover {
+  background-color: #e2e2e2;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.edit, .delete {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.edit {
+  color: #51c5de;
+}
+
+.delete {
+  color: #f04c64;
+}
